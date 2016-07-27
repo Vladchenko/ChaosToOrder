@@ -1,0 +1,203 @@
+/**
+     * There are 4 states in a rendering of this program.
+     * STATIC - It's when a user has not yet run the convergence process 
+     *          (not yet pushed start). In this state he can click, i.e select
+     *          any scatterred ball, rotate a balls around a selected one, 
+     *          change a scattering kind of a scatterred balls.
+     * CONVERGING - It's when a convergence is being done. User is able to do 
+     *          any action present in STATIC mode.
+     * CONVERGED -  It's when a convergence is over, i.e. a scattered balls have 
+     *          reached a destination balls. At this state some action might run.
+     * SCATTERING - It's when a convergence is over and user clicks a mouse 
+     *          button to run a scattering process (balls a randomly roaming 
+     *          around).
+     */
+    public enum renderingState {STATIC, CONVERGING, CONVERGED, SCATTERING}
+	private renderingState enmrenderingState;
+
+
+
+
+//            stepPI = Math.PI * 2 / ballsScattered.length;
+                // 3 petals = to a destination circle
+//                ballsScattered[i].setX(screenWidth / 2
+//                        + radius * Math.sin(i * stepPI) / 2
+//                        - radius / 2 * Math.cos(i * 2 * stepPI));
+//                ballsScattered[i].setY(screenHeight / 2
+//                        + radius * Math.cos(i * stepPI) / 2
+//                        - radius / 2 * Math.sin(i * 2 * stepPI));
+                
+                // 4 petals bigger than a destination circle
+//                ballsScattered[i].setX(screenWidth / 2 
+//                        + radius * Math.sin(i * stepPI - Math.PI/2) / 1
+//                        + radius / 2 * Math.cos(i * 3 * stepPI));
+//                ballsScattered[i].setY(screenHeight / 2 
+//                        + radius * Math.cos(i * stepPI - Math.PI/2) / 1
+//                        + radius / 2 *  Math.sin(i * 3 * stepPI));
+                
+                // 8 petals bigger than a destination circle
+//ballsScattered[i].setX(screenWidth / 2 
+//                        + radius * 10 * Math.sin(i * stepPI + Math.PI/16) / 10
+//                        + radius / 2 * Math.cos(i * 8 * stepPI));
+//                ballsScattered[i].setY(screenHeight / 2 
+//                        + radius * 10 * Math.cos(i * stepPI + Math.PI/16) / 10
+//                        + radius / 2 *  Math.sin(i * 8 * stepPI));                
+                
+                // 20 petals bigger than a destination circle
+//ballsScattered[i].setX(screenWidth / 2 
+//                        + radius * Math.sin(i * stepPI) / 1
+//                        + radius / 2 * Math.cos(i * 19 * stepPI));
+//                ballsScattered[i].setY(screenHeight / 2 
+//                        + radius * Math.cos(i * stepPI) / 1
+//                        + radius / 2 *  Math.sin(i * 19 * stepPI));                
+
+                // Concaved triangle less than destination circle
+//ballsScattered[i].setX(screenWidth / 2 
+//                        + radius * 10 * Math.sin(i * stepPI) / 20
+//                        + radius / 4 * Math.cos(i * 2 * stepPI));
+//                ballsScattered[i].setY(screenHeight / 2 
+//                        + radius * 10 * Math.cos(i * stepPI) / 20
+//                        + radius / 4 *  Math.sin(i * 2 * stepPI));                
+            
+//                        //** Concaved triangle = to destination circle
+//                stepPI = Math.PI * 2 / ballsScattered.length;
+//                ballsScattered[i].setX(screenWidth / 2 
+//                        + radius * 6 * Math.sin(i * stepPI) / 9
+//                        + radius / 3 * Math.cos(i * 2 * stepPI));
+//                ballsScattered[i].setY(screenHeight / 2 
+//                        + radius * 6 * Math.cos(i * stepPI) / 9
+//                        + radius / 3 *  Math.sin(i * 2 * stepPI));  
+                
+                // Concaved triangle bigger than destination circle
+//ballsScattered[i].setX(screenWidth / 2 
+//                        + radius * 10 * Math.sin(i * stepPI - Math.PI*3/4) / 10
+//                        + radius / 2 * Math.cos(i * 2 * stepPI));
+//                ballsScattered[i].setY(screenHeight / 2 
+//                        + radius * 10 * Math.cos(i * stepPI - Math.PI*3/4) / 10
+//                        + radius / 2 *  Math.sin(i * 2 * stepPI));                
+                
+                // Pentagramm
+//                ballsScattered[i].setX(screenWidth / 2 
+//                        + radius * 2 * Math.sin(i * stepPI) / 2
+//                        + radius / 4 * Math.cos(i * 4 * stepPI));
+//                ballsScattered[i].setY(screenHeight / 2 
+//                        + radius * 2 * Math.cos(i * stepPI) / 2
+//                        + radius / 4 *  Math.sin(i * 4 * stepPI));
+                // 7 curves
+//                ballsScattered[i].setX(screenWidth / 2 
+//                        + radius * 2 * Math.sin(i * stepPI) / 2
+//                        + radius / 4 * Math.cos(i * 6 * stepPI));
+//                ballsScattered[i].setY(screenHeight / 2 
+//                        + radius * 2 * Math.cos(i * stepPI) / 2
+//                        + radius / 4 *  Math.sin(i * 6 * stepPI));
+                
+            //** Many circles intersected inside each other
+//                ballsScattered[i].setX(screenWidth / 2
+//                        + radius * Math.sin(i * stepPI) / 4
+//                        + radius / 2 * Math.cos(i * 10 * stepPI));
+//                ballsScattered[i].setY(screenHeight / 2
+//                        + radius * Math.cos(i * stepPI) / 4
+//                        + radius / 2 * Math.sin(i * 10 * stepPI));
+                
+            //** Many circles intersected inside each other BIG CIRCLE
+//                ballsScattered[i].setX(screenWidth / 2 
+//                        + radius * 2 * Math.sin(i * stepPI) / 2
+//                        + radius / 2 * Math.cos(i * 20 * stepPI));
+//                ballsScattered[i].setY(screenHeight / 2 
+//                        + radius * 2 * Math.cos(i * stepPI) / 2
+//                        + radius / 2 *  Math.sin(i * 20 * stepPI)); 
+                
+                //** Spiral
+//                stepPI = Math.PI * 2 / ballsScattered.length * 8;
+//ballsScattered[i].setX(screenWidth / 2 
+//                        + radius * i * Math.sin(i * stepPI - Math.PI*3/4) / 1000
+//                        //+ radius / 20 * Math.cos(i * 10 * stepPI)
+//                        );
+//                ballsScattered[i].setY(screenHeight / 2 
+//                        + radius * i * Math.cos(i * stepPI - Math.PI*3/4) / 1000
+//                        //+ radius / 20 *  Math.sin(i * 10 * stepPI)
+//                        );
+                
+                //** Cobweb
+//ballsScattered[i].setX(screenWidth / 2 
+//                        + radius * i * Math.sin(i * stepPI - Math.PI*3/4) / 1000
+//                        + radius / 20 * Math.cos(i * 10 * stepPI)
+//                        );
+//                ballsScattered[i].setY(screenHeight / 2 
+//                        + radius * i * Math.cos(i * stepPI - Math.PI*3/4) / 1000
+//                        + radius / 20 *  Math.sin(i * 10 * stepPI)
+//                        );                
+                
+                //** 8 cone star
+//                                stepPI = Math.PI / 4;
+//                ballsScattered[i].setX(screenWidth / 2 
+//                        + radius * i
+//                        * Math.sin(i * stepPI - Math.PI*3/4) / 1000
+////                        + radius / 10 * Math.cos(i * 8 * stepPI)
+//                        );
+//                ballsScattered[i].setY(screenHeight / 2 
+//                        + radius * i
+//                        * Math.cos(i * stepPI - Math.PI*3/4) / 1000
+////                        + radius / 10 *  Math.sin(i * 8 * stepPI)
+//                        );
+                
+                //** 20 cone star
+//                stepPI = Math.PI / 20;
+//                ballsScattered[i].setX(screenWidth / 2 
+//                        + radius * i
+//                        * Math.sin(i * stepPI - Math.PI*3/4) / 1000
+////                        + radius / 10 * Math.cos(i * 8 * stepPI)
+//                        );
+//                ballsScattered[i].setY(screenHeight / 2 
+//                        + radius * i
+//                        * Math.cos(i * stepPI - Math.PI*3/4) / 1000
+////                        + radius / 10 *  Math.sin(i * 8 * stepPI)
+//                        );    
+                
+                //** Balls placed in a circle
+//                                stepPI = Math.PI / 20;
+//                ballsScattered[i].setX(screenWidth / 2 
+//                        + radius * Math.sin(i * stepPI - Math.PI*3/4)
+////                        + radius / 10 * Math.cos(i * 8 * stepPI)
+//                        );
+//                ballsScattered[i].setY(screenHeight / 2 
+//                        + radius * Math.cos(i * stepPI - Math.PI*3/4)
+////                        + radius / 10 *  Math.sin(i * 8 * stepPI)
+//                        );
+
+                //** Balls placed in 2 circles
+//                                stepPI = Math.PI * 2 / ballsScattered.length;
+//                if (i % 20 == 0) {
+//                    radius += rad;
+//                    rad *= -1;
+//                }
+//                ballsScattered[i].setX(screenWidth / 2 
+//                        + radius * Math.sin(i * stepPI - Math.PI*3/4)
+//                        );
+//                ballsScattered[i].setY(screenHeight / 2 
+//                        + radius * Math.cos(i * stepPI - Math.PI*3/4)
+//                        );
+                
+                
+//                stepPI = Math.PI * 2 / ballsScattered.length;
+//                if (i % 20 == 0) {
+//                    radius += rad;
+//                    rad *= -1;
+//                }
+//                ballsScattered[i].setX(screenWidth / 2 
+//                        + radius * Math.sin(i * stepPI * 3 - Math.PI*3/4)
+//                        + radius / 2 * Math.cos(i * 1 * stepPI)
+//                        );
+//                ballsScattered[i].setY(screenHeight / 2 
+//                        + radius * Math.cos(i * stepPI * 3 - Math.PI*3/4)
+//                        + radius / 2 *  Math.sin(i * 1 * stepPI)
+//                        );                
+
+            //** Star
+//            stepPI = Math.PI * 2 / ballsScattered.length;                                
+//                ballsScattered[i].setX(screenWidth / 2
+//                        + radius * 2 * Math.sin(i * stepPI * 4) / 3
+//                        + radius / 3 * Math.cos(i * 6 * stepPI));
+//                ballsScattered[i].setY(screenHeight / 2
+//                        + radius * 2 * Math.cos(i * stepPI * 4) / 3
+//                        + radius / 3 * Math.sin(i * 6 * stepPI));
